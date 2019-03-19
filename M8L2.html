@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>belajar AJAX</h1>
+</body>
+<p id="demo">AJAX akan mengubah text</p>
+<button type="button" onclick="loadDoc()">Ubah</button>
+<script>
+	function loadDoc(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if (this.radystate == 4 && this.status == 200) {
+				document.getElementById("demo").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "https://gist.githubusercontent.com/bayunuriman14/053320defb8f28e0c367aeaa90610d4f/raw/118ad40712c0e70390f24663e477d08bf34f3a65/contoh_ajax.txt", true);
+		xhttp.send();
+	}
+</script>
+</html>
